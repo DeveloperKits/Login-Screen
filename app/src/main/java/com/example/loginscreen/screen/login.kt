@@ -15,10 +15,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.loginscreen.R
+import com.example.loginscreen.component.ButtonComponent
+import com.example.loginscreen.component.CheckBoxField
 import com.example.loginscreen.component.InputTextField
 import com.example.loginscreen.component.NormalText
 import com.example.loginscreen.component.PassInputTextField
@@ -57,7 +60,7 @@ fun LoginScreen() {
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            InputTextField(hint = "Email", icon = Icons.Default.Email) {
+            InputTextField(hint = "Email", icon = Icons.Default.Email, keyboardType = KeyboardType.Email) {
 
             }
 
@@ -66,6 +69,15 @@ fun LoginScreen() {
             PassInputTextField(hint = "Password", icon = Icons.Default.Password) {
 
             }
+
+            CheckBoxField(value = "You are agreed to our terms and conditions")
+
+            Spacer(modifier = Modifier.height(50.dp))
+
+            ButtonComponent(text = "Login") {
+                
+            }
+
         }
 
     }
